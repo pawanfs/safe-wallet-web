@@ -118,8 +118,8 @@ export const useRedefine = (
     const errorMessage = redefineErrors
       ? DEFAULT_ERROR_MESSAGE
       : simulationErrors.length > 0
-        ? CRITICAL_ERRORS[simulationErrors[0].code]
-        : undefined
+      ? CRITICAL_ERRORS[simulationErrors[0].code]
+      : undefined
     return errorMessage ? new Error(errorMessage) : undefined
   }, [redefineErrors, redefinePayload?.payload?.errors])
 
