@@ -18,6 +18,7 @@ import CloseIcon from '@/public/images/common/close.svg'
 import InfoIcon from '@/public/images/notifications/info.svg'
 import CheckIcon from '@/public/images/common/check.svg'
 import type { EIP712TypedData } from '@safe-global/safe-gateway-typescript-sdk'
+import { validateTransaction } from '@/services/blockaid'
 
 export const REDEFINE_RETRY_TIMEOUT = 2_000
 const RedefineModuleInstance = new RedefineModule()
@@ -86,6 +87,12 @@ export const useRedefine = (
         return
       }
 
+      if ('data' in data) {
+        validateTransaction(Number(safe.chainId), safeAddress, data.data, 'app.safe.global').then((response) => {
+          console.log(response)
+        })
+      }
+
       return RedefineModuleInstance.scanTransaction({
         chainId: Number(safe.chainId),
         data,
@@ -111,8 +118,8 @@ export const useRedefine = (
     const errorMessage = redefineErrors
       ? DEFAULT_ERROR_MESSAGE
       : simulationErrors.length > 0
-      ? CRITICAL_ERRORS[simulationErrors[0].code]
-      : undefined
+        ? CRITICAL_ERRORS[simulationErrors[0].code]
+        : undefined
     return errorMessage ? new Error(errorMessage) : undefined
   }, [redefineErrors, redefinePayload?.payload?.errors])
 
