@@ -7,13 +7,13 @@
 
 The default Safe web interface.
 
-## Contributing
+## 🚀 Contributing
 
 Contributions, be it a bug report or a pull request, are very welcome. Please check our [contribution guidelines](CONTRIBUTING.md) beforehand.
 
-## Getting started with local development
+## 🛠️ Getting started with local development
 
-### Environment variables
+### 🌐 Environment variables
 
 Create a `.env` file with environment variables. You can use the `.env.example` file as a reference.
 
@@ -49,7 +49,7 @@ Here's the list of all the environment variables:
 
 If you don't provide some of the variables, the corresponding features will be disabled in the UI.
 
-### Running the app locally
+### 🏃 Running the app locally
 
 Install the dependencies:
 
@@ -70,7 +70,7 @@ yarn start
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the app.
 
-## Lint
+## 🧹 Lint
 
 ESLint:
 
@@ -84,7 +84,7 @@ Prettier:
 yarn prettier
 ```
 
-## Tests
+## 🧪 Tests
 
 Unit tests:
 
@@ -92,7 +92,7 @@ Unit tests:
 yarn test --watch
 ```
 
-### Cypress tests
+### 🧪 Cypress tests
 
 Build a static site:
 
@@ -114,7 +114,7 @@ yarn cypress:open
 
 You can then choose which e2e tests to run.
 
-## Component template
+## 🧩 Component template
 
 To create a new component from a template:
 
@@ -122,12 +122,12 @@ To create a new component from a template:
 yarn cmp MyNewComponent
 ```
 
-## Pre-push hooks
+## 🔄 Pre-push hooks
 
 This repo has a pre-push hook that runs the linter (always) and the tests (if the `RUN_TESTS_ON_PUSH` env variable is set to true)
 before pushing. If you want to skip the hooks, you can use the `--no-verify` flag.
 
-## Frameworks
+## 🧰 Frameworks
 
 This app is built using the following frameworks:
 
